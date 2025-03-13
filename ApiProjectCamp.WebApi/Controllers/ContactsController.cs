@@ -40,7 +40,7 @@ namespace ApiProjectCamp.WebApi.Controllers
             return Ok("Ekleme işlemi başarılı");
         }
 
-        [HttpGet]
+        [HttpDelete]
         public IActionResult DeleteContact(int id)
         {
             Contact value = _apiContext.Contacts.Find(id);
@@ -69,7 +69,6 @@ namespace ApiProjectCamp.WebApi.Controllers
             _apiContext.Update(contact);
             _apiContext.SaveChanges();
             return Ok("Değişiklikler başarıyla güncellendi.");
-
         }
     }
 }
