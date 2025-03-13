@@ -15,7 +15,7 @@ namespace ApiProjectCamp.WebApi.Context
         public DbSet<Contact> Contacts {  get; set; }
         public DbSet<Feature> Features {  get; set; }
         public DbSet<Image> Images {  get; set; }
-        public DbSet<Message> Mesaages {  get; set; }
+        public DbSet<Message> Messages {  get; set; }
         public DbSet<Product> Products {  get; set; }
         public DbSet<Reservation> Reservations{  get; set; }
         public DbSet<Service> Services {  get; set; }

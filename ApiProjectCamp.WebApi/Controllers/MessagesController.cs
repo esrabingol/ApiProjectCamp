@@ -23,7 +23,7 @@ namespace ApiProjectCamp.WebApi.Controllers
         [HttpGet]
         public IActionResult MessageList()
         {
-            List<Message> messages = _context.Mesaages.ToList();
+            List<Message> messages = _context.Messages.ToList();
             return Ok(_mapper.Map<List<ResultMessageDto>>(messages));
         }
 
@@ -31,7 +31,7 @@ namespace ApiProjectCamp.WebApi.Controllers
         public IActionResult CreateMessage(CreateMessageDto createMessage)
         {
             Message message = _mapper.Map<Message>(createMessage);
-            _context.Mesaages.Add(message);
+            _context.Messages.Add(message);
             _context.SaveChanges();
             return Ok("Mesaj Ekleme işlemi başarıyla gerçekleşti.");
         }
@@ -40,7 +40,7 @@ namespace ApiProjectCamp.WebApi.Controllers
         public IActionResult UpdateMessage(UpdateMessageDto updateMessage)
         {
             Message message = _mapper.Map<Message>(updateMessage);
-            _context.Mesaages.Update(message);
+            _context.Messages.Update(message);
             _context.SaveChanges();
             return Ok("Mesaj Güncelleme işlemi Başarılı");
         }
@@ -48,8 +48,8 @@ namespace ApiProjectCamp.WebApi.Controllers
         [HttpDelete]
         public IActionResult DeleteMessage(int id)
         {
-            Message message = _context.Mesaages.Find(id);
-            _context.Mesaages.Remove(message);
+            Message message = _context.Messages.Find(id);
+            _context.Messages.Remove(message);
             _context.SaveChanges();
             return Ok("Silme işlemi başarılı.");
         }
@@ -57,7 +57,7 @@ namespace ApiProjectCamp.WebApi.Controllers
         [HttpGet("GetMessage")]
         public IActionResult GetMessage(int id)
         {
-            Message message = _context.Mesaages.Find(id);
+            Message message = _context.Messages.Find(id);
             return Ok(_mapper.Map<GetByIdMessageDto>(message));
         }
     }
